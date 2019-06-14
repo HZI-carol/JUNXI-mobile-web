@@ -1,0 +1,41 @@
+$theme = #d71619
+
+$info = #909399
+$blue = #409EFF
+$success = #67C23A
+$warning = #E6A23C
+$danger = #F56C6C
+$light-blue = #e8f1ff
+
+$bg = #2b2e35
+$section = #393c43
+$border = #393c43
+
+$small-font = 14px
+$big-font = 16px
+
+$tabbar = 50px
+$navbar = 45px
+
+_unactive = 180px + 70px 
+_active = 64px + 70px  // layout.active
+
+mediaQuery(class, itemWidth, num = 1...10)
+  for $i in num
+    @media only screen and (min-width: itemWidth*$i + _active)
+      .layout.active {class}
+        width (1/$i)*100%
+    @media only screen and (min-width: itemWidth*$i + _unactive)
+      .layout {class}
+        width (1/$i)*100%
+
+borderBottom($color)
+  content ' '
+  position absolute
+  pointer-events none
+  box-sizing border-box
+  left .3rem
+  right .3rem
+  bottom 0
+  transform scaleY(.5)
+  border-bottom 1px solid $color

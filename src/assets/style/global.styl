@@ -1,0 +1,236 @@
+@import './reset'
+@import './index'
+  
+// global
+html,body
+  width 100vw
+  height 100%
+  background-color $bg
+  position relative
+  overflow-y auto
+.iconfont
+  font-size 16px
+
+.red
+  color $theme!important
+.green, .success
+  color $success
+.blue
+  color $blue
+
+.section-title
+  line-height 47px
+  color #fff
+  font-size 17.5px
+  padding-left .2rem
+
+.null
+  font-size $big-font
+  color #777
+
+.border-bottom
+  position relative
+.border-bottom:not(:last-child)::after
+  borderBottom($section)
+.submit-form
+  height 50px
+  display flex
+  justify-content space-around
+  align-items center
+  background-color $section
+.load-more
+  display flex
+  padding 10px 0
+  align-items center
+  justify-content center
+  &>button
+    height 25px
+    line-height 25px
+    width 80%
+
+.has-nav
+  padding-top $navbar
+  height 100%
+  overflow-y auto
+  -webkit-overflow-scrolling: touch
+.has-tab
+  height 100%
+  overflow-y auto
+  padding-bottom $tabbar
+  -webkit-overflow-scrolling: touch
+// .has-nav.has-tab
+//   $h = $navbar + $tabbar
+
+
+// reset
+#nprogress .bar
+  background red !important
+
+// vux reset
+.weui-tabbar
+  border-top 1px solid $bg
+.weui-btn_primary
+  background-color $theme!important
+.vux-swiper
+  .vux-swiper-item
+    touch-action none
+    a
+      height 100%
+      position relative
+      overflow hidden
+      img
+        height 100%
+        position absolute
+        left 50%
+        top 50%
+        transform translate(-50%, -50%)
+
+// vant reset
+.van-toast__text
+  margin-top .2rem
+.van-collapse
+  .van-collapse-item
+    .van-collapse-item__title
+      display flex
+      justify-content space-between
+    .van-collapse-item__content
+      background none
+    .van-cell--clickable:active
+      background none
+
+.van-radio__icon--checked .van-icon
+  border-color $theme!important
+  background-color $theme!important
+
+.van-button--primary
+  background-color: $theme!important
+  border: 1px solid $theme!important
+.van-button--plain.van-button--primary
+  color $theme
+  background-color #fff!important
+.van-button--info
+  background-color #10a408!important
+  border 1px solid #10a408!important
+.van-button--plain.van-button--info
+  color #10a408
+  background-color #fff!important
+.van-popup.van-actionsheet
+  background-color $bg
+  color #ddd
+  .van-actionsheet__header
+    background-color $section
+  .van-actionsheet__cancel::before
+    background $bg
+  .van-actionsheet__cancel, .van-actionsheet__item
+    background-color $section
+    &.van-actionsheet__item--disabled
+      color #616161
+html
+  .van-icon
+    line-height inherit
+    font-style normal
+
+.van-switch
+  font-size 20px!important
+  &.van-switch--on
+    background-color $theme
+
+.van-tabs
+  .van-tabs__nav
+    background-color $section
+    .van-tabs__line
+      background-color $theme
+      height 2px
+    .van-tab
+      color #fff
+      &.van-tab--active
+        color $theme
+  .van-hairline--top-bottom::after
+    border none
+    border-bottom 1px solid $bg
+
+.van-field, .van-cell
+  $height = 30px
+  background none
+  .van-cell__title
+    max-width 1.5rem
+    line-height $height
+    color #fff
+  .van-field__body
+    background-color #fff
+    border-radius 15px
+    .van-field__right-icon
+      padding 0
+      margin-right 10px
+    .van-field__control
+      height $height
+      line-height $height
+      padding 0 10px
+    textarea
+      padding 5px
+      border-radius 10px
+      background-color #fff
+  &.van-cell:not(:last-child)::after
+    border-color $border
+    right: .3rem
+    
+// 外层显示验证码 按钮
+.out-display
+  .van-field
+    .van-field__body
+      background none
+      .van-field__right-icon
+        padding 0 10px
+        margin 0
+        img
+          width 100%
+          height 40px
+      input
+        background-color #fff
+        border-radius 15px
+
+.van-picker
+  background-color $section!important
+  .van-picker-column__item--selected
+    color #fff!important
+  .van-picker__cancel,.van-picker__confirm
+    color #fff!important
+
+// transition 
+// fade-transform
+.fade-transform-leave-active,
+.fade-transform-enter-active  
+  transition: all .1s
+.fade-transform-enter
+  opacity 0
+.fade-transform-leave-to
+  opacity 0
+
+.search
+  display flex
+  flex 1
+  background-color rgba(#ececec, .8)
+  height 25px
+  line-height 25px
+  border-radius 12px
+  color #666
+  padding 0 0 0 10px
+  .search-input
+    width 100%
+    outline none
+    background transparent
+    border none
+    box-shadow none
+    height 100%
+  i.iconfont
+    width 40px
+    text-align center
+    font-size 14px
+
+for num in  2 3 4
+  .omit-{num}
+    overflow hidden
+    text-overflow ellipsis
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp num
